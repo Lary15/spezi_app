@@ -5887,6 +5887,11 @@ react-native-material-ui@^1.30.1:
     prop-types "^15.5.10"
     react-native-material-design-styles "^0.2.6"
 
+react-native-notifications@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-notifications/-/react-native-notifications-3.4.1.tgz#3046bae51863e1073d71820598f0b85a3b389535"
+  integrity sha512-jJHo5z5XR0smZIVj4yjoqDWZ3HX26TL8FMsUIBiIy1Hh9b0q/HAl1xN651sTW/HM49+Mr2F+ShSf6nXBnGB4fQ==
+
 react-native-paper@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-4.5.0.tgz#5f1f1e658dbd7a322a299e08ce76e22be44c01d5"

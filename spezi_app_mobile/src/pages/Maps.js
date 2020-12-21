@@ -9,12 +9,13 @@ import {createMarker, allMarkers, deleteMarker} from '../services/marker';
 export default Maps = ({navigation}) => {
   const authContext = useContext(AuthContext);
   const [markers, setMarkers] = useState([]);
+  const [refresh, setRefresh] = useState(0);
 
   useEffect(() => {
     allMarkers()
       .then((res) => setMarkers(res.data))
       .catch((e) => console.log(e));
-  }, [markers]);
+  }, [refresh]);
 
   const handleLogout = async () => {
     const response = await authContext.logout();
@@ -43,7 +44,7 @@ export default Maps = ({navigation}) => {
             e.nativeEvent.coordinate.latitude,
             e.nativeEvent.coordinate.longitude,
           )
-            .then((res) => setMarkers([]))
+            .then((res) => setRefresh(!refresh))
             .catch((e) => console.log(e));
         }}>
         {markers.map((marker) => {
@@ -56,7 +57,7 @@ export default Maps = ({navigation}) => {
               }}
               onPress={() => {
                 deleteMarker(marker.id)
-                  .then((res) => setMarkers([]))
+                  .then((res) => setRefresh(!refresh))
                   .catch((e) => console.log(e));
               }}
             />
